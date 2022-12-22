@@ -38,8 +38,9 @@
     "@vlasky/mysql": "flydata/mysql#2b25650aa1c49d83b72e77f42bcceee9c0a67291",
     "big-integer": "1.6.48",
     "iconv-lite": "0.6.2",
-    "moment": "^2.29.3",
-    "moment-timezone": "0.5.33"
+    "invariant": "2.2.2",
+    "moment": "2.29.4",
+    "moment-timezone": "0.5.40"
   },
   "volta": {
     "node": "16.14.0",

@@ -171,14 +171,16 @@ ZongJi.prototype._options = function({
   filename,
   position,
   startAtEnd,
-  heartbeatInterval = 5
+  heartbeatInterval = 5,
+  gtidsData,
 }) {
   this.options = {
     serverId,
     filename,
     position,
     startAtEnd,
-    heartbeatInterval
+    heartbeatInterval,
+    gtidsData,
   };
 };
 
@@ -220,6 +222,7 @@ ZongJi.prototype.get = function(name) {
 // - `filename`, `position` the position of binlog to beigin with
 // - `startAtEnd` if true, will update filename / postion automatically
 // - `includeEvents`, `excludeEvents`, `includeSchema`, `exludeSchema` filter different binlog events bubbling
+// - `gtidsData` {[SID]: Array<[start, end]>} GTIDs-set with processed events GTIDs for server-side events filtering
 ZongJi.prototype.start = function(options = {}) {
 
   this._options(options);
