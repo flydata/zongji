@@ -35,6 +35,7 @@ util.inherits(ZongJi, EventEmitter);
 ZongJi.prototype._establishConnection = function(dsn) {
   const createConnection = (options) => {
     let connection = mysql.createConnection(options);
+    connection.query("SET NAMES utf8")
     connection.on('error', this.emit.bind(this, 'error'));
     connection.on('unhandledError', this.emit.bind(this, 'error'));
     // don't need to call connection.connect() here
